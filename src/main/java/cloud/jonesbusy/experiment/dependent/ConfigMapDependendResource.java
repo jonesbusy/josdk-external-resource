@@ -29,7 +29,7 @@ public class ConfigMapDependendResource extends CRUDKubernetesDependentResource<
                 .withName("my-configmap")
                 .withNamespace(primary.getMetadata().getNamespace())
                 .endMetadata()
-                .addToData("id", model.getId())
+                .addToData("id", primary.getSpec().id())
                 .addToData("name", model.getName())
                 .build();
     }

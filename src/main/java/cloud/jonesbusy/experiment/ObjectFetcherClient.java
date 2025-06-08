@@ -9,8 +9,8 @@ import org.eclipse.microprofile.rest.client.inject.RegisterRestClient;
  * Client interface for fetching objects from a RESTful API.
  * This interface uses MicroProfile Rest Client to define the endpoint and method for fetching an object by its ID.
  */
-@Path("objects")
-@RegisterRestClient(baseUri = "https://api.restful-api.dev")
+@Path("users")
+@RegisterRestClient(baseUri = "https://jsonplaceholder.typicode.com")
 public interface ObjectFetcherClient {
 
     /**

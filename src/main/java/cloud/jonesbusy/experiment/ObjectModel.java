@@ -1,6 +1,5 @@
 package cloud.jonesbusy.experiment;
 
-import java.util.Map;
 import java.util.Objects;
 
 /**
@@ -9,18 +8,12 @@ import java.util.Objects;
  */
 public class ObjectModel {
 
-    private String id;
-    private String name;
-    private Map<String, String> data;
+    private final String id;
+    private final String name;
 
-    public ObjectModel(String id, String name, Map<String, String> data) {
+    public ObjectModel(String id, String name) {
         this.id = id;
         this.name = name;
-        this.data = data;
-    }
-
-    public ObjectModel() {
-        // Needed for deserialization
     }
 
     public String getId() {
@@ -29,10 +22,6 @@ public class ObjectModel {
 
     public String getName() {
         return name;
-    }
-
-    public Map<String, String> getData() {
-        return data;
     }
 
     @Override

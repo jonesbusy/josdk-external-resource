@@ -6,6 +6,7 @@ import cloud.jonesbusy.experiment.ObjectModel;
 import io.javaoperatorsdk.operator.api.reconciler.Context;
 import io.javaoperatorsdk.operator.processing.dependent.external.PerResourcePollingDependentResource;
 import io.javaoperatorsdk.operator.processing.dependent.kubernetes.KubernetesDependent;
+import java.time.Duration;
 import java.util.Set;
 import java.util.logging.Logger;
 import org.eclipse.microprofile.rest.client.inject.RestClient;
@@ -19,7 +20,7 @@ public class ExternalDependentResource extends PerResourcePollingDependentResour
     ObjectFetcherClient client;
 
     public ExternalDependentResource() {
-        super(ObjectModel.class);
+        super(ObjectModel.class, Duration.ofDays(1));
     }
 
     @Override
@@ -34,6 +35,6 @@ public class ExternalDependentResource extends PerResourcePollingDependentResour
     @Override
     protected ObjectModel desired(ObjectFetcherResource primary, Context<ObjectFetcherResource> context) {
         LOG.info("Desired ObjectModel for ObjectFetcher: " + primary.getSpec().id());
-        return new ObjectModel(primary.getSpec().id(), null, null);
+        return new ObjectModel(primary.getSpec().id(), null);
     }
 }

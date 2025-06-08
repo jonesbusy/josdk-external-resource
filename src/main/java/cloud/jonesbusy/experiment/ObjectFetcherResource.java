@@ -12,4 +12,11 @@ import io.fabric8.kubernetes.model.annotation.Version;
  */
 @Group("cloud.jonesbusy.external-resource")
 @Version("v1")
-public class ObjectFetcherResource extends CustomResource<ObjectFetcherSpec, Void> implements Namespaced {}
+public class ObjectFetcherResource extends CustomResource<ObjectFetcherSpec, ObjectFetcherStatus>
+        implements Namespaced {
+
+    @Override
+    protected ObjectFetcherStatus initStatus() {
+        return new ObjectFetcherStatus("UNKNOWN", 0L);
+    }
+}
