@@ -1,0 +1,5 @@
+apiVersion: cloud.jonesbusy.external-resource/v1
+kind: MySuperCR
+metadata:
+  name: test-cr
+  namespace: default
