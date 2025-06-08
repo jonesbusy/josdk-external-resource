@@ -1,7 +1,7 @@
 apiVersion: cloud.jonesbusy.external-resource/v1
-kind: ObjectFetcher
+kind: ObjectFetcherResource
 metadata:
   name: test-cr
   namespace: default
 spec:
-  id: "1"
+  id: "2"

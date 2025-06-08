@@ -3,16 +3,24 @@ package cloud.jonesbusy.experiment;
 import java.util.Map;
 import java.util.Objects;
 
-public class APIModel {
+/**
+ * Represents a model for an object fetched from an external API.
+ * This class encapsulates the ID, name, and additional data of the object.
+ */
+public class ObjectModel {
 
-    private final String id;
-    private final String name;
-    private final Map<String, String> data;
+    private String id;
+    private String name;
+    private Map<String, String> data;
 
-    public APIModel(String id, String name, Map<String, String> data) {
+    public ObjectModel(String id, String name, Map<String, String> data) {
         this.id = id;
         this.name = name;
         this.data = data;
+    }
+
+    public ObjectModel() {
+        // Needed for deserialization
     }
 
     public String getId() {
@@ -30,7 +38,7 @@ public class APIModel {
     @Override
     public boolean equals(Object o) {
         if (o == null || getClass() != o.getClass()) return false;
-        APIModel apiModel = (APIModel) o;
+        ObjectModel apiModel = (ObjectModel) o;
         return Objects.equals(id, apiModel.id);
     }
 

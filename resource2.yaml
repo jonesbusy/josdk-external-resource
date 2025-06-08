@@ -1,5 +1,0 @@
-apiVersion: cloud.jonesbusy.external-resource/v1
-kind: MySuperCR2
-metadata:
-  name: test-cr2
-  namespace: default
