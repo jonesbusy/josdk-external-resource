@@ -22,7 +22,7 @@ import org.slf4j.LoggerFactory;
             @Dependent(type = ExternalDependentResource.class, name = "external-resource", dependsOn = "configmap"),
             @Dependent(type = ConfigMapDependendResource.class, name = "configmap"),
         })
-@ControllerConfiguration
+@ControllerConfiguration(finalizerName = "foo")
 @SuppressWarnings("unused")
 public class ObjectFetcherReconciler implements Reconciler<ObjectFetcherResource> {
 
